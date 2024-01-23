@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>practice CRUD operation</title>
+</head>
+
+<body>
+    <a href="/posts/new">create post</a>
+    <h1>CRUD operation Practice</h1>
+    <% for (let post of chats ){%>
+        <div>
+            <p> Username @<%= post.username %>
+            </p>
+
+            <p>Messege <%= post.post %>
+            </p>
+
+            <a href="http://localhost:2001/posts/<%= post.id %>/edit">edit</a>
+            <form method="post" action="posts/<%= post.id %>?_method=DELETE">
+                <button>delete</button>
+            </form>
+        </div>
+        <% } %>
+
+</body>
+
+</html>
